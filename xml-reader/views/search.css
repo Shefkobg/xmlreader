@@ -1,0 +1,109 @@
+body {
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1,
+#searchForm,
+#searchResult {
+    margin-bottom: 20px;
+    color: white;
+}
+
+#searchForm {
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+
+input {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: border 0.3s;
+}
+
+button:hover {
+    background-color: #3838388e;
+    border: 2px solid rgba(255, 255, 255, 0.705);
+}
+
+#searchResult {
+    margin-top: 20px;
+}
+
+.result-row {
+    opacity: 0;
+    animation: slide 0.5s ease-in-out;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation-fill-mode: forwards;
+}
+
+.separator {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+input::placeholder {
+    color: white;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateX(-180px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

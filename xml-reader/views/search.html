@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+
+<body>
+    <h1>Search Books</h1>
+    <form id="searchForm">
+        <label for="authorName">Author's Name:</label>
+        <input type="text" id="authorName" name="authorName" placeholder="Enter author's name">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="searchResult"></div>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const authorName = document.getElementById("authorName").value;
+            searchAuthors(authorName);
+
+            localStorage.setItem("savedAuthorName", authorName);
+        });
+
+        function searchAuthors(authorName) {
+            fetch(`../search.php?authorName=${encodeURIComponent(authorName)}`)
+                .then(response => response.text())
+                .then(data => {
+                    const searchResult = document.getElementById("searchResult");
+                    searchResult.innerHTML = data;
+
+                    const resultRows = document.querySelectorAll('.result-row');
+                    resultRows.forEach((row, index) => {
+                        row.style.animationDelay = `${index * 0.1}s`;
+                    });
+                });
+        }
+    </script>
+</body>
+
+</html>

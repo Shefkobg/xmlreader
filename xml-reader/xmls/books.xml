@@ -1,0 +1,26 @@
+<library>
+    <book>
+        <author>Isak Azimov</author>
+        <name>End of spirit</name>
+    </book>
+    <book>
+        <author>3</author>
+        <name>Standard</name>
+    </book>
+    <book>
+        <author>Иван Вазов</author>
+        <name>Под игото</name>
+    </book>
+    <book>
+        <author>Иван Вазов</author>
+        <name>Немили недраги</name>
+    </book>
+    <book>
+        <author>Иван Вазов</author>
+        <name>Паисий</name>
+    </book>
+     <book>
+        <author>George Orwell</author>
+        <name>Nineteen Eighty-Four</name>
+    </book>
+</library>
